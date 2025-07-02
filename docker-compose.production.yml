@@ -26,8 +26,8 @@ services:
   gateway:
     image: trifdocker/kittygram_gateway
     env_file: .env
-    ports:
-      - 9000:80
     volumes:
       - static:/staticfiles/
       - media:/mediafiles/
+    ports:
+      - 9000:80
