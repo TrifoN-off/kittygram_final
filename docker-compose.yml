@@ -15,8 +15,8 @@ services:
     image: trifdocker/kittygram_backend
     env_file: .env
     volumes:
-      -static:/backend_static
-      -media:/backend_media
+      - static:/backend_static
+      - media:/backend_media
   frontend:
     image: trifdocker/kittygram_frontend
     env_file: .env
