@@ -2,8 +2,6 @@ name: Main Kittygram workflow
 
 on:
   push:
-    branches:
-      - main
 
 jobs:
   tests:
@@ -120,6 +118,7 @@ jobs:
           tags: trifdocker/kittygram_gateway:latest
   deploy:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     needs: 
       - build_and_push_to_docker_hub
       - build_frontend_and_push_to_docker_hub
